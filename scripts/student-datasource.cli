@@ -1,0 +1,12 @@
+batch
+/subsystem=datasources/data-source=rda_oracle_datasource:add(jndi-name=java:/jdbc/student_oracle_datasource,pool-name=student-ds-pool, max-pool-size=20,min-pool-size=5,driver-name=oracle,connection-url="jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = bchracdev-scan)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME= RACDEVTAF)))",enabled=true,user-name=www_student,credential-reference={store=student_store, alias=student-db-pw},transaction-isolation=TRANSACTION_READ_COMMITTED)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=flush-strategy,value=FailingConnectionOnly)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=validate-on-match,value=false)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=background-validation-millis,value=120000)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=background-validation,value=true)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=prepared-statements-cache-size,value=100)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=share-prepared-statements,value=true)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=valid-connection-checker-class-name,value=org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=stale-connection-checker-class-name,value=org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker)
+/subsystem=datasources/data-source=rda_oracle_datasource:write-attribute(name=exception-sorter-class-name,value=org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter)
+run-batch

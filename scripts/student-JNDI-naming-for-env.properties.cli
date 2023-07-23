@@ -1,0 +1,3 @@
+batch
+/subsystem=naming/binding=java\:\/chb\/student\/ENVIRONMENT_PROPERTIES_PATH:add(binding-type=simple,value="file:/extconf/jbeans/app/student/config/environment.properties")
+run-batch

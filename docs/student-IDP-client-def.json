@@ -1,0 +1,171 @@
+{
+    "clientId": "student-${env.COMPUTERNAME}",
+    "adminUrl": "http://${COMPUTERNAME}.jbeans.org:8080/student/saml",
+    "baseUrl": "http://${COMPUTERNAME}.jbeans.org:8080/student/",
+    "surrogateAuthRequired": false,
+    "enabled": true,
+    "alwaysDisplayInConsole": false,
+    "clientAuthenticatorType": "client-secret",
+    "redirectUris": [
+        "http://${COMPUTERNAME}.jbeans.org:8080/student/",
+        "http://${COMPUTERNAME}.jbeans.org:8080/student/*"
+    ],
+    "webOrigins": [],
+    "notBefore": 0,
+    "bearerOnly": false,
+    "consentRequired": false,
+    "standardFlowEnabled": true,
+    "implicitFlowEnabled": false,
+    "directAccessGrantsEnabled": false,
+    "serviceAccountsEnabled": false,
+    "publicClient": false,
+    "frontchannelLogout": true,
+    "protocol": "saml",
+    "attributes": {
+        "saml.assertion.signature": "false",
+        "saml_assertion_consumer_url_redirect": "http://${COMPUTERNAME}.jbeans.org:8080/student/",
+        "saml.force.post.binding": "false",
+        "saml.multivalued.roles": "false",
+        "saml.encrypt": "false",
+        "login_theme": "jbeans",
+        "saml.server.signature": "true",
+        "saml.server.signature.keyinfo.ext": "false",
+        "exclude.session.state.from.auth.response": "false",
+        "saml.signing.certificate": "MIICoTCCAYkCBgFzkT71VDANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAlldDIwMjAtamgwHhcNMjAwNzI3MTcwNjI5WhcNMzAwNzI3MTcwODA5WjAUMRIwEAYDVQQDDAlldDIwMjAtamgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDFB2ebWqAijcYydoUU0LxvvRv/uYot78JAFTkJex2R/Bs1KzjP+DYfJSQnn6ZMggMTJdw1KLL+4aVX5BSsUsyh04Gw884m55ZHNs39FU0Ll6KLhx9N8gxUfWdq1WnUfMRxhY3bgi6CIuay+3G1MM9rzclxyFeBK6Aqov3oYZFgehSFxuKbRLi8MzzcxkojoRvIXuBzYUvxmCTOVbtKcPx9FhuYtKZeLBVt6Nbj+fNfplcQNSganDGva4FsbAJKR0flbatW383UvOw+geLfEDQ6ALIpkEeOphB4OB6ejmiPhT7X/6/u3KTFkM7io7GfqNvvwN2Mxp2X5nCIxuhNPKG9AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAJw9NHkGsJRjXMOGSP8SjdGtYB6ZSLt5JRIUsZHRKcEJUQw3/o1MAZ0jy8sJ34kajvZ9w94zUVRJjUCOh572tVZAKyi7G8KB29ASWBmjuBTvigr/QyO0Nu/eicqt/bsqHWKxsnWx9cfB9H4FH7PKwxxTkKo8/W2Q4DL+PgjrD9dSOw2RlVIACJwIoZEBW70cm4+VkFSfvxWOSKYXreWKib58r4yOlB31JbJsZsSThkW8R/hoitcFiFpgRZjd3TUxqv+9J55qDkZLVtSTZ2OpWaTRegIfXe6hHAxBgYiZbDaj82xrE+ih37CzrP/jXKZnM5oALU4uy+J+F+oUcO4hTI0=",
+        "saml.signature.algorithm": "RSA_SHA256",
+        "saml_force_name_id_format": "true",
+        "saml.client.signature": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "saml.authnstatement": "true",
+        "display.on.consent.screen": "false",
+        "saml_name_id_format": "username",
+        "saml.signing.private.key": "MIIEowIBAAKCAQEAxQdnm1qgIo3GMnaFFNC8b70b/7mKLe/CQBU5CXsdkfwbNSs4z/g2HyUkJ5+mTIIDEyXcNSiy/uGlV+QUrFLModOBsPPOJueWRzbN/RVNC5eii4cfTfIMVH1natVp1HzEcYWN24IugiLmsvtxtTDPa83JcchXgSugKqL96GGRYHoUhcbim0S4vDM83MZKI6EbyF7gc2FL8ZgkzlW7SnD8fRYbmLSmXiwVbejW4/nzX6ZXEDUoGpwxr2uBbGwCSkdH5W2rVt/N1LzsPoHi3xA0OgCyKZBHjqYQeDgeno5oj4U+1/+v7tykxZDO4qOxn6jb78DdjMadl+ZwiMboTTyhvQIDAQABAoIBAGpp6WdatwpykA1JPe9UHbIr7SdcymitCbkavUeFmx7xjrBUu8Z3RKPlp3VPIL5Jqed5l0mOxb4rmOWzZgb8YVE1ruIni7wvcFbeHrsF+iq8pym8vQeYJ1iqsmRdB1+gU2kMvOVFlmDrALbCX1OBHUYYSyiND9XP/h2JEqGjsKTt1ifFA0UDFLPgnAkfFUI6cZ//4lrQXjbbXJ06rsRyeGv84vWJkcgdX11hgSE6rsiI0kzpskf/1f2J/1AiTtnyxHjYQWs3BPE2SBW+DDwyYZIMUq7+Xf6JMgLCtbcAYFsLYRtPFuMNc7UIuhhMUbhUdxaEt6iRDOEoWBH3kgBq0fECgYEA/bjrpoWdUgp3OodgaRu6d8eeMFWl6e1lic2cZhD6TNbLkQ8kKe2jE3ZGBiWjyDSuHL2YFdVHhqDYQIQ+gDFk7s2UNocX0RtWpwUuq68BxJkHRv33qEUwqQzFCRndNaqw9AXVThc/p+eHs0mlTSw22ClgKWlJWKdl2k7002bM/G8CgYEAxswyb6bdV8YmPXQguDOO5cWNJZwMfqIzcsHV6mSWyr0xsrQO+OItejzUcNmtN+cS/w/X8wsUZpHyFE+IRLTN4IufDz4smp8bn0DcPemBrf+XDUxHfu/XAl5AmRuTNAa8p8+W4c/xwthVULSTR5MFW8lqspiXlcDf/Q3+mthmMpMCgYBd78EPfhio70cFXGnNgH6hKj7fFla/LS2Sv5VQFKkXGc90fW6eN2VRJ1D1panlzdtIuMk+DCDXL2XhPRUG0ULVRzfAmHOw77Y9UCXfWoQFDcMr/YtbuYIylI++tty3qeKp9h7rMqBWwdnz/yg8Ukpb7bW0n06QjCmhkeoC+uSZ8QKBgAPDsBzPIxfbZ7P4M/po94bAU+jnaJEpTyIYK43Rs81JAdzpbfMmjUfoSPmOFaqeVIzB5wvyJMPAdb4Ot3zdk5xx6GQogD25T5OXbdQ6TLtXwKt+y0fLEN45nK2JiSMOEZp34tqJzoErCYqKsNNFJG/Vg5C4NP6f9V3cWvrhqCXDAoGBALXPeLbdYjcDuxm7ZhQ8i2WLVXDnJ3C1wlsVN+vDL4HAES/U8mIoOE5ZIXm1IWm7CP1jyRvBARpVyiu/62P/FfD3sTWxpChEXxKjcJmHXiOLz4+63ahSYV7dRv43J0E2Y9EJLsv+D+DvwaiSSUAM4XiT4R4M2MkkRFiQH9C8bDVM",
+        "saml.onetimeuse.condition": "false",
+        "saml_signature_canonicalization_method": "http://www.w3.org/2001/10/xml-exc-c14n#"
+    },
+    "authenticationFlowBindingOverrides": {},
+    "fullScopeAllowed": true,
+    "nodeReRegistrationTimeout": -1,
+    "protocolMappers": [
+        {
+            "name": "family name",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-property-mapper",
+            "consentRequired": false,
+            "config": {
+                "userinfo.token.claim": "true",
+                "user.attribute": "lastName",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "family_name",
+                "jsonType.label": "String"
+            }
+        },
+        {
+            "name": "role list",
+            "protocol": "saml",
+            "protocolMapper": "saml-role-list-mapper",
+            "consentRequired": false,
+            "config": {
+                "single": "false",
+                "attribute.nameformat": "Basic",
+                "attribute.name": "Role"
+            }
+        },
+        {
+            "name": "email",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-property-mapper",
+            "consentRequired": false,
+            "config": {
+                "userinfo.token.claim": "true",
+                "user.attribute": "email",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "email",
+                "jsonType.label": "String"
+            }
+        },
+        {
+            "name": "X500 givenName",
+            "protocol": "saml",
+            "protocolMapper": "saml-user-property-mapper",
+            "consentRequired": false,
+            "config": {
+                "attribute.nameformat": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+                "user.attribute": "firstName",
+                "friendly.name": "givenName",
+                "attribute.name": "urn:oid:2.5.4.42"
+            }
+        },
+        {
+            "name": "X500 surname",
+            "protocol": "saml",
+            "protocolMapper": "saml-user-property-mapper",
+            "consentRequired": false,
+            "config": {
+                "attribute.nameformat": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+                "user.attribute": "lastName",
+                "friendly.name": "surname",
+                "attribute.name": "urn:oid:2.5.4.4"
+            }
+        },
+        {
+            "name": "given name",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-property-mapper",
+            "consentRequired": false,
+            "config": {
+                "userinfo.token.claim": "true",
+                "user.attribute": "firstName",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "given_name",
+                "jsonType.label": "String"
+            }
+        },
+        {
+            "name": "X500 email",
+            "protocol": "saml",
+            "protocolMapper": "saml-user-property-mapper",
+            "consentRequired": false,
+            "config": {
+                "attribute.nameformat": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+                "user.attribute": "email",
+                "friendly.name": "email",
+                "attribute.name": "urn:oid:1.2.840.113549.1.9.1"
+            }
+        },
+        {
+            "name": "username",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-property-mapper",
+            "consentRequired": false,
+            "config": {
+                "userinfo.token.claim": "true",
+                "user.attribute": "username",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "preferred_username",
+                "jsonType.label": "String"
+            }
+        },
+        {
+            "name": "full name",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-full-name-mapper",
+            "consentRequired": false,
+            "config": {
+                "id.token.claim": "true",
+                "access.token.claim": "true"
+            }
+        }
+    ],
+    "defaultClientScopes": [],
+    "optionalClientScopes": [],
+    "access": {
+        "view": true,
+        "configure": true,
+        "manage": true
+    }
+}

@@ -1,0 +1,8 @@
+batch
+/subsystem=logging/logging-profile=student-profile:add()
+/subsystem=logging/logging-profile=student-profile/size-rotating-file-handler=student-log-file:add(file={path=>/extconf/jbeans/app/student/logs/student.log},level=TRACE,formatter="%d [%t] %-5p %c:%L - %m%n")
+/subsystem=logging/logging-profile=student-profile/size-rotating-file-handler=student-log-file:write-attribute(name=rotate-size, value=2M)
+/subsystem=logging/logging-profile=student-profile/size-rotating-file-handler=student-log-file:write-attribute(name=max-backup-index, value=10)
+/subsystem=logging/logging-profile=student-profile/logger=org.jbeans:add(level=DEBUG)
+/subsystem=logging/logging-profile=student-profile/logger=org.jbeans:assign-handler(name=student-log-file)
+run-batch 

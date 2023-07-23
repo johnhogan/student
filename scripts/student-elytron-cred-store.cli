@@ -1,0 +1,3 @@
+batch
+/subsystem=elytron/credential-store=student_store:add(location="/extconf/jbeans/app/student/config/student_store.jceks", credential-reference={clear-text=STORE_PASSWORD},create=true)
+run-batch

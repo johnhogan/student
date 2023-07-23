@@ -1,0 +1,60 @@
+<!-- ADD THE CONFIGURATOR JNDI PROPERTY TO THE NAMING SECTION IN: standalone.xml -->
+<simple name="java:global/jbeans/student/ENVIRONMENT_PROPERTIES_PATH" value="C:/extconf/jbeans/app/student/config"/>
+
+<!-- COPY YOUR PROJECT'S src/main/resources/student.properties FILE INTO THE C:/extconf/jbeans/app/student/config DIRECTORY -->
+
+
+<!-- student LOGGING PROFILE FOR YOUR APPLICATION TO THE LOGGING SUBSYSTEM IN: standalone.xml -->
+                <logging-profile name="student-profile">
+                    <size-rotating-file-handler name="student-rotating-log-file">
+                        <level name="INFO"/>
+                        <formatter>
+                            <pattern-formatter pattern="%d [%t] %-5p %c:%L - %m%n"/>
+                        </formatter>
+                        <file path="C:/extconf/jbeans/app/student/logs/student.log"/>
+                        <rotate-size value="2m"/>
+                        <max-backup-index value="10"/>
+                    </size-rotating-file-handler>
+                    <logger category="org.jbeans">
+                        <level name="TRACE"/>
+                        <handlers>
+                            <handler name="student-rotating-log-file"/>
+                        </handlers>
+                    </logger>
+                    <logger category="org.jbeans.config">
+                        <level name="TRACE"/>
+                        <handlers>
+                            <handler name="student-rotating-log-file"/>
+                        </handlers>
+                    </logger>
+                    <logger category="org.hibernate">
+                        <level name="TRACE"/>
+                        <handlers>
+                            <handler name="student-rotating-log-file"/>
+                        </handlers>
+                    </logger>
+                </logging-profile>
+
+
+<!-- student DATASOURCE FOR YOUR APPLICATION, ADD TO <datasources> IN: standalone.xml -->
+                <datasource jndi-name="java:/jdbc/student_oracle_datasource" pool-name="student_datasource_pool">
+                    <connection-url>jdbc:Oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = jbeansdev-scan)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME= RACdevTAF)))</connection-url>
+                    <driver>oracle</driver>
+                    <pool>
+                        <min-pool-size>5</min-pool-size>
+                        <max-pool-size>20</max-pool-size>
+                        <flush-strategy>FailingConnectionOnly</flush-strategy>
+                    </pool>
+                    <security>
+                        <user-name>www_student</user-name>
+                        <password>xxxxxxxxxx</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
+                        <validate-on-match>false</validate-on-match>
+                        <background-validation>true</background-validation>
+                        <background-validation-millis>120000</background-validation-millis>
+                        <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
+                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
+                    </validation>
+                </datasource>
